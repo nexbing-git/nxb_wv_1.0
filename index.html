@@ -10,7 +10,7 @@
     /* General Styles */
     body {
       margin: 0;
-      padding: 0;
+      padding: 20px; /* Slight padding for the overall website */
       font-family: 'Nunito', sans-serif;
       background: white;
       color: black;
@@ -49,6 +49,59 @@
       transform: scale(1.1);
     }
 
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .hamburger div {
+      width: 24px;
+      height: 2px;
+      background: black;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    }
+
+    .menu a {
+      margin: 10px 0;
+      color: black;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      color: grey;
+    }
+
     /* Main Content Styles */
     main {
       display: flex;
@@ -61,9 +114,9 @@
     }
 
     h1 {
-      font-size: 36px; /* Smaller font size for mobile */
+      font-size: 28px; /* Smaller font size for mobile */
       font-weight: 700; /* Bold */
-      white-space: nowrap;
+      white-space: normal; /* Allow text to wrap */
       overflow: hidden;
       border-right: 2px solid black;
       animation: blink-caret 0.75s step-end infinite;
@@ -73,6 +126,7 @@
     @media (min-width: 768px) {
       h1 {
         font-size: 48px; /* Larger font size for desktop */
+        white-space: nowrap; /* Prevent wrapping on desktop */
       }
     }
 
@@ -121,152 +175,6 @@
       100% { width: 0; }
     }
 
-    /* About Section Styles */
-    .about-section {
-      padding: 40px 20px;
-      background: white; /* Same as home section */
-    }
-
-    .about-section h2 {
-      font-size: 28px; /* Smaller font size for mobile */
-      font-weight: 300; /* Light font */
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .about-section h2 {
-        font-size: 36px; /* Larger font size for desktop */
-      }
-    }
-
-    .about-section h2 b {
-      font-weight: 700; /* Bold for 'bing' */
-    }
-
-    .about-description {
-      font-size: 16px; /* Smaller font size for mobile */
-      font-weight: 300;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    @media (min-width: 768px) {
-      .about-description {
-        font-size: 18px; /* Larger font size for desktop */
-      }
-    }
-
-    .cards-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      width: 150px; /* Smaller width for mobile */
-      height: 120px; /* Smaller height for mobile */
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px; /* Smaller font size for mobile */
-      font-weight: 700;
-      color: black;
-      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    @media (min-width: 768px) {
-      .card {
-        width: 180px; /* Larger width for desktop */
-        height: 150px; /* Larger height for desktop */
-        font-size: 16px; /* Larger font size for desktop */
-      }
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      background: black;
-      color: white;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      max-width: 500px;
-      width: 90%;
-      text-align: left;
-      position: relative;
-      animation: slideIn 0.3s ease;
-    }
-
-    .modal-content h3 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .modal-content p {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.5;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideIn {
-      from { transform: translateY(-20px); }
-      to { transform: translateY(0); }
-    }
-
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to { opacity: 0; }
-    }
-
-    @keyframes slideOut {
-      from { transform: translateY(0); }
-      to { transform: translateY(-20px); }
-    }
-
     /* Footer Styles */
     footer {
       display: flex;
@@ -275,59 +183,28 @@
       padding: 20px;
       font-size: 14px;
       background: white;
-      margin-top: 40px; /* Spacing between about section and footer */
+      margin-top: 40px; /* Spacing between main content and footer */
     }
 
     .footer-left {
       text-align: left;
-      flex: 1;
-    }
-
-    .footer-center {
-      text-align: center;
-      flex: 1;
     }
 
     .footer-right {
-      text-align: right;
-      flex: 1;
-    }
-
-    .footer-right p {
-      margin: 0;
-      font-size: 16px;
-      font-weight: 300;
-      color: #555;
-    }
-
-    .footer-right p b {
-      font-weight: 700;
-    }
-
-    .socials {
       display: flex;
       gap: 15px;
-      justify-content: flex-start; /* Left-aligned socials */
     }
 
-    .socials a {
+    .footer-right a {
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 600; /* Semi-bold */
       color: black;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
-    .socials a:hover {
-      color: #0077b5; /* LinkedIn blue */
-    }
-
-    .socials a[href*="facebook"]:hover {
-      color: #1877f2; /* Facebook blue */
-    }
-
-    .socials a[href*="instagram"]:hover {
-      color: #e1306c; /* Instagram pink */
+    .footer-right a:hover {
+      color: grey; /* Grey on hover */
     }
 
     /* Dark Mode Styles */
@@ -344,52 +221,32 @@
       color: grey; /* Grey remains visible in dark mode */
     }
 
-    body.dark-mode .about-section {
+    body.dark-mode .hamburger div {
+      background: white;
+    }
+
+    body.dark-mode .menu {
       background: black;
     }
 
-    body.dark-mode .about-description {
-      color: #ccc; /* Light grey for dark mode */
-    }
-
-    body.dark-mode .card {
-      background: #444;
+    body.dark-mode .menu a {
       color: white;
     }
 
-    body.dark-mode .card:hover {
-      background: white;
-      color: black;
-      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-    }
-
-    body.dark-mode .modal-content {
-      background: white;
-      color: black;
+    body.dark-mode .menu a:hover {
+      color: grey;
     }
 
     body.dark-mode footer {
       background: black;
     }
 
-    body.dark-mode .footer-right p {
-      color: #ccc; /* Light grey for dark mode */
-    }
-
-    body.dark-mode .socials a {
+    body.dark-mode .footer-right a {
       color: white;
     }
 
-    body.dark-mode .socials a:hover {
-      color: #0077b5; /* LinkedIn blue */
-    }
-
-    body.dark-mode .socials a[href*="facebook"]:hover {
-      color: #1877f2; /* Facebook blue */
-    }
-
-    body.dark-mode .socials a[href*="instagram"]:hover {
-      color: #e1306c; /* Instagram pink */
+    body.dark-mode .footer-right a:hover {
+      color: grey;
     }
   </style>
 </head>
@@ -398,52 +255,34 @@
     <div class="logo">
       <a href="#"><span>nex</span><b>bing</b></a>
     </div>
-    <div class="boop" onclick="toggleDarkMode()">boop!</div>
+    <div style="display: flex; align-items: center;">
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="boop" onclick="toggleDarkMode()">boop!</div>
+    </div>
   </header>
+  <!-- Hamburger Menu -->
+  <div class="menu" id="menu">
+    <a href="#">Contact</a>
+  </div>
   <main>
     <h1>Cheers to the <span class="typing"></span></h1>
     <h3>"Inspiration does exist, but it must find you working"</h3>
   </main>
-  <!-- About Section -->
-  <section class="about-section">
-    <h2>the <span>nex</span><b>bing</b> concept</h2>
-    <p class="about-description">
-      Welcome to the future of business! At <b>nexbing</b>, we are redefining how businesses operate by creating a microcosm of shared resources, diverse revenue streams, and centralized resource sharing. Our innovative approach ensures maximum efficiency, scalability, and sustainability for multiple business ventures. Join us in building a smarter, more connected business ecosystem.
-    </p>
-    <div class="cards-container">
-      <div class="card" onclick="openModal('Centralized Resource Pooling', 'A unified approach to pooling resources for maximum efficiency and scalability. This ensures optimal utilization of assets and minimizes waste.')">Centralized Resource Pooling</div>
-      <div class="card" onclick="openModal('Synergistic Business Development', 'Collaborative strategies to foster growth and innovation across multiple business units. Synergy is key to unlocking new opportunities.')">Synergistic Business Development</div>
-      <div class="card" onclick="openModal('Iterative Innovation Framework', 'A continuous cycle of innovation, testing, and refinement to stay ahead in a competitive market. Iteration drives progress.')">Iterative Innovation Framework</div>
-      <div class="card" onclick="openModal('Diverse Portfolio Management', 'Managing a wide range of investments and projects to ensure stability and growth. Diversity reduces risk and enhances returns.')">Diverse Portfolio Management</div>
-      <div class="card" onclick="openModal('Data-Driven Decision-Making', 'Leveraging data analytics to make informed and strategic decisions. Data is the backbone of modern business.')">Data-Driven Decision-Making</div>
-      <div class="card" onclick="openModal('Community-Driven Engagement', 'Building strong relationships with communities to drive sustainable and impactful growth. Engagement fosters trust and loyalty.')">Community-Driven Engagement</div>
-    </div>
-  </section>
   <!-- Footer Section -->
   <footer>
     <div class="footer-left">
-      <div class="socials">
-        <a href="https://www.linkedin.com/company/nexbing" target="_blank">LinkedIn</a>
-        <a href="https://www.facebook.com/nexbing" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/nexbing" target="_blank">Instagram</a>
-      </div>
-    </div>
-    <div class="footer-center">
-      Copyright © <span id="year"></span> <span>nex</span><b>bing</b>
+      nexbing ⓝ <span id="year"></span>
     </div>
     <div class="footer-right">
-      <p>Drop Us a Line</p>
-      <p><b>support@nexbing.com</b></p>
+      <a href="https://www.linkedin.com/company/nexbing" target="_blank">LinkedIn</a>
+      <a href="https://www.facebook.com/nexbing" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/nexbing" target="_blank">Instagram</a>
     </div>
   </footer>
-  <!-- Modal -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeModal()">&times;</span>
-      <h3 id="modal-title"></h3>
-      <p id="modal-description"></p>
-    </div>
-  </div>
 
   <script>
     // Typing Animation
@@ -488,31 +327,19 @@
     const yearElement = document.getElementById('year');
     yearElement.textContent = new Date().getFullYear();
 
-    // Modal Functions
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
+    // Hamburger Menu Toggle
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger');
 
-    const openModal = (title, description) => {
-      modalTitle.textContent = title;
-      modalDescription.textContent = description;
-      modal.style.display = 'flex';
+    const toggleMenu = () => {
+      hamburger.classList.toggle('active');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     };
 
-    const closeModal = () => {
-      modal.style.animation = 'fadeOut 0.3s ease';
-      modal.querySelector('.modal-content').style.animation = 'slideOut 0.3s ease';
-      setTimeout(() => {
-        modal.style.display = 'none';
-        modal.style.animation = '';
-        modal.querySelector('.modal-content').style.animation = '';
-      }, 300);
-    };
-
-    // Close modal when clicking outside
+    // Close menu when clicking outside
     window.onclick = (event) => {
-      if (event.target === modal) {
-        closeModal();
+      if (event.target === menu) {
+        toggleMenu();
       }
     };
   </script>
