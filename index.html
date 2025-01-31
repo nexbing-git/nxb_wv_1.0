@@ -1,106 +1,481 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="nexbing">
-    <meta name="description" content="Let's re-design the norms!">
-    <meta name="keywors" content="nexbing,nexbingcom,nexbingxyx,reinvent,redesign,innovation,investment,funding,asia,bangladesh">
-    <meta name="google-site-verification" content="qxN20z7Dre3SL4ICsG8wEbfhiAdtqtEoCNpAZIFvywc">
-    <meta name="robots" content="noindex,nofollow">
-    
-    <title>nexbing - Re-designing the Norms</title>
-    
-    <link rel="icon" type="image/x-icon" href="https://scontent.fdac5-2.fna.fbcdn.net/v/t39.30808-6/294565351_434853571985732_7566418601520847003_n.png?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=uHf1utO-mhMAX9I07zy&_nc_ht=scontent.fdac5-2.fna&oh=00_AT8Ok__s8KnanaDvztPHJSpStYzxnFABI7Zg7D9nioJ7Vw&oe=63546ECA">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/unicons.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nexbing - microcosm of business ventures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://media.licdn.com/dms/image/v2/C560BAQHHUdjxKvjgRQ/company-logo_100_100/company-logo_100_100/0/1630651586122/nexbing_logo?e=1746662400&v=beta&t=RB9PtrL1zw1h8h7JtoVNf7VJpZdlXIgPnJ1aYAfWzjQ">
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+      background: white;
+      color: black;
+      transition: background 0.5s, color 0.5s;
+    }
 
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="css/tooplate-style.css">
-    
-<!--
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-Tooplate 2115 Marvel
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
 
-https://www.tooplate.com/view/2115-marvel
+    .logo, .boop {
+      font-size: 20px; /* Smaller font size */
+      font-weight: 300;
+    }
 
--->
-  </head>
-  <body>
+    .logo b {
+      font-weight: 700;
+    }
 
-    <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"></i>nexbing</a>
-      
-      <div class="navbar-toggler">
-              <ul class="navbar-nav ml-lg-auto">
-                  <div class="ml-lg-4">
-                    <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                      <h5>boop!</h5>
-                    </div>
-                  </div>
-              </ul>
-          </div>
+    .boop {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      font-weight: 700; /* Bold */
+    }
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-lg-auto">
-                    <div class="ml-lg-4">
-                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                        <h5>boop!</h5>
-                      </div>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    .boop:hover {
+      transform: scale(1.1);
+    }
 
-    <!-- ABOUT -->
-    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-                    <div class="about-text">
-                        <h1 class="animated animated-text">
-                            <span class="mr-2">Cheers to the</span>
-                                <div class="animated-info">
-                                    <span class="animated-item">Weird Ones</span>
-                                    <span class="animated-item">Misfits</span>
-                                    <span class="animated-item">Redefiners</span>
-                                </div>
-                        </h1>
+    /* Main Content Styles */
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 80vh;
+      text-align: left;
+      padding-left: 20px;
+    }
 
-                        <p><i>"Inspiration does exist, but it must find you working."</i></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    h1 {
+      font-size: 48px;
+      font-weight: 700; /* Bold */
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid black;
+      animation: blink-caret 0.75s step-end infinite;
+      margin: 0;
+    }
 
-    <!-- FOOTER -->
-     <footer class="footer py-5">
-          <div class="container">
-               <div class="row">
+    h3 {
+      font-size: 20px;
+      font-weight: 300; /* Light font */
+      font-style: italic; /* Italic */
+      color: grey; /* Grey color */
+      margin: 10px 0 0 0;
+    }
 
-                    <div class="col-lg-12 col-12">                                
-                        <p class="copyright-text text-center">Copyright &copy; 2023 nexbing</p>
-                    </div>
-                    
-               </div>
-          </div>
-     </footer>
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: black; }
+    }
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
+    .typing {
+      display: inline-block;
+      position: relative;
+      color: grey;
+      font-weight: 700; /* Bold */
+    }
 
-  </body>
+    .typing::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: grey;
+      animation: underline 3s steps(30, end) infinite;
+    }
+
+    @keyframes underline {
+      0% { width: 0; }
+      25% { width: 100%; }
+      50% { width: 100%; }
+      75% { width: 0; }
+      100% { width: 0; }
+    }
+
+    /* About Section Styles */
+    .about-section {
+      padding: 40px 20px;
+      background: white; /* Same as home section */
+    }
+
+    .about-section h2 {
+      font-size: 36px;
+      font-weight: 300; /* Light font */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .about-section h2 b {
+      font-weight: 700; /* Bold for 'bing' */
+    }
+
+    .about-description {
+      font-size: 18px;
+      font-weight: 300;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      width: 180px; /* Slightly smaller card size */
+      height: 180px; /* Slightly smaller card size */
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 15px;
+      font-size: 16px; /* Reverted to previous font size */
+      font-weight: 700;
+      color: black;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: black;
+      color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+      text-align: left;
+      position: relative;
+      animation: slideIn 0.3s ease;
+    }
+
+    .modal-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); }
+      to { transform: translateY(0); }
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
+    @keyframes slideOut {
+      from { transform: translateY(0); }
+      to { transform: translateY(-20px); }
+    }
+
+    /* Footer Styles */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      font-size: 14px;
+      background: white;
+      margin-top: 40px; /* Spacing between about section and footer */
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .footer-right p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 300;
+      color: #555;
+    }
+
+    .footer-right p b {
+      font-weight: 700;
+    }
+
+    .socials {
+      display: flex;
+      gap: 15px;
+    }
+
+    .socials a {
+      font-size: 16px;
+      font-weight: 700;
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #0077b5; /* LinkedIn blue */
+    }
+
+    .socials a[href*="facebook"]:hover {
+      color: #1877f2; /* Facebook blue */
+    }
+
+    .socials a[href*="instagram"]:hover {
+      color: #e1306c; /* Instagram pink */
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background: black;
+      color: white;
+    }
+
+    body.dark-mode h1 {
+      border-right-color: white;
+    }
+
+    body.dark-mode h3 {
+      color: grey; /* Grey remains visible in dark mode */
+    }
+
+    body.dark-mode .about-section {
+      background: black;
+    }
+
+    body.dark-mode .about-description {
+      color: #ccc; /* Light grey for dark mode */
+    }
+
+    body.dark-mode .card {
+      background: #444;
+      color: white;
+    }
+
+    body.dark-mode .card:hover {
+      background: white;
+      color: black;
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    }
+
+    body.dark-mode .modal-content {
+      background: white;
+      color: black;
+    }
+
+    body.dark-mode footer {
+      background: black;
+    }
+
+    body.dark-mode .footer-right p {
+      color: #ccc; /* Light grey for dark mode */
+    }
+
+    body.dark-mode .socials a {
+      color: white;
+    }
+
+    body.dark-mode .socials a:hover {
+      color: #0077b5; /* LinkedIn blue */
+    }
+
+    body.dark-mode .socials a[href*="facebook"]:hover {
+      color: #1877f2; /* Facebook blue */
+    }
+
+    body.dark-mode .socials a[href*="instagram"]:hover {
+      color: #e1306c; /* Instagram pink */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="#"><span>nex</span><b>bing</b></a>
+    </div>
+    <div class="boop" onclick="toggleDarkMode()">boop!</div>
+  </header>
+  <main>
+    <h1>Cheers to the <span class="typing"></span></h1>
+    <h3>"Inspiration does exist, but it must find you working"</h3>
+  </main>
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>the <span>nex</span><b>bing</b> concept</h2>
+    <p class="about-description">
+      Welcome to the future of business! At <b>nexbing</b>, we are redefining how businesses operate by creating a microcosm of shared resources, diverse revenue streams, and centralized resource sharing. Our innovative approach ensures maximum efficiency, scalability, and sustainability for multiple business ventures. Join us in building a smarter, more connected business ecosystem.
+    </p>
+    <div class="cards-container">
+      <div class="card" onclick="openModal('Centralized Resource Pooling', 'A unified approach to pooling resources for maximum efficiency and scalability. This ensures optimal utilization of assets and minimizes waste.')">Centralized Resource Pooling</div>
+      <div class="card" onclick="openModal('Synergistic Business Development', 'Collaborative strategies to foster growth and innovation across multiple business units. Synergy is key to unlocking new opportunities.')">Synergistic Business Development</div>
+      <div class="card" onclick="openModal('Iterative Innovation Framework', 'A continuous cycle of innovation, testing, and refinement to stay ahead in a competitive market. Iteration drives progress.')">Iterative Innovation Framework</div>
+      <div class="card" onclick="openModal('Diverse Portfolio Management', 'Managing a wide range of investments and projects to ensure stability and growth. Diversity reduces risk and enhances returns.')">Diverse Portfolio Management</div>
+      <div class="card" onclick="openModal('Data-Driven Decision-Making', 'Leveraging data analytics to make informed and strategic decisions. Data is the backbone of modern business.')">Data-Driven Decision-Making</div>
+      <div class="card" onclick="openModal('Community-Driven Engagement', 'Building strong relationships with communities to drive sustainable and impactful growth. Engagement fosters trust and loyalty.')">Community-Driven Engagement</div>
+    </div>
+  </section>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-left">
+      Copyright © <span id="year"></span> <span>nex</span><b>bing</b>
+    </div>
+    <div class="footer-right">
+      <p>Drop Us a Line</p>
+      <p><b>support@nexbing.com</b></p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/company/nexbing" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/nexbing" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/nexbing" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <script>
+    // Typing Animation
+    const typingText = document.querySelector('.typing');
+    const words = ['misfits', 'weird ones', 'redefiners'];
+    let wordIndex = 0;
+    let charIndex = 0;
+
+    const type = () => {
+      if (charIndex < words[wordIndex].length) {
+        typingText.textContent += words[wordIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 1500);
+      }
+    };
+
+    const erase = () => {
+      if (charIndex > 0) {
+        typingText.textContent = words[wordIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, 500);
+      }
+    };
+
+    type();
+
+    // Dark Mode Toggle
+    const toggleDarkMode = () => {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('.boop').style.transform = 'scale(1.1)';
+      setTimeout(() => {
+        document.querySelector('.boop').style.transform = 'scale(1)';
+      }, 300);
+    };
+
+    // Dynamic Year Update
+    const yearElement = document.getElementById('year');
+    yearElement.textContent = new Date().getFullYear();
+
+    // Modal Functions
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+
+    const openModal = (title, description) => {
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      modal.style.display = 'flex';
+    };
+
+    const closeModal = () => {
+      modal.style.animation = 'fadeOut 0.3s ease';
+      modal.querySelector('.modal-content').style.animation = 'slideOut 0.3s ease';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.style.animation = '';
+        modal.querySelector('.modal-content').style.animation = '';
+      }, 300);
+    };
+
+    // Close modal when clicking outside
+    window.onclick = (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+</body>
 </html>
