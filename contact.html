@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - nexbing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://media.licdn.com/dms/image/v2/C560BAQHHUdjxKvjgRQ/company-logo_100_100/company-logo_100_100/0/1630651586122/nexbing_logo?e=1746662400&v=beta&t=RB9PtrL1zw1h8h7JtoVNf7VJpZdlXIgPnJ1aYAfWzjQ">
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 20px; /* Slight padding for the overall website */
+      font-family: 'Nunito', sans-serif;
+      background: white;
+      color: black;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo, .boop {
+      font-size: 20px; /* Smaller font size */
+      font-weight: 300;
+    }
+
+    .logo b {
+      font-weight: 700;
+    }
+
+    .boop {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      font-weight: 700; /* Bold */
+    }
+
+    .boop:hover {
+      transform: scale(1.1);
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .hamburger div {
+      width: 24px;
+      height: 2px;
+      background: black;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    }
+
+    .menu a {
+      margin: 10px 0;
+      color: black;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      color: grey;
+    }
+
+    /* Contact Page Styles */
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center vertically */
+      align-items: center; /* Center horizontally */
+      height: 80vh;
+      text-align: center; /* Center text */
+    }
+
+    .contact-section p {
+      font-size: 24px;
+      font-weight: 300; /* Light font */
+      margin: 10px 0; /* Spacing between lines */
+    }
+
+    .contact-section p b {
+      font-weight: 700; /* Bold for email */
+    }
+
+    /* Footer Styles */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      font-size: 14px;
+      background: white;
+      margin-top: 40px; /* Spacing between main content and footer */
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-right a {
+      font-size: 16px;
+      font-weight: 600; /* Semi-bold */
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-right a:hover {
+      color: grey; /* Grey on hover */
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background: black;
+      color: white;
+    }
+
+    body.dark-mode .hamburger div {
+      background: white;
+    }
+
+    body.dark-mode .menu {
+      background: black;
+    }
+
+    body.dark-mode .menu a {
+      color: white;
+    }
+
+    body.dark-mode .menu a:hover {
+      color: grey;
+    }
+
+    body.dark-mode footer {
+      background: black;
+    }
+
+    body.dark-mode .footer-right a {
+      color: white;
+    }
+
+    body.dark-mode .footer-right a:hover {
+      color: grey;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><span>nex</span><b>bing</b></a>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="boop" onclick="toggleDarkMode()">boop!</div>
+    </div>
+  </header>
+  <!-- Hamburger Menu -->
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Contact Page Content -->
+  <div class="contact-section">
+    <p>Drop Us a Line</p>
+    <p><b>support@nexbing.com</b></p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-left">
+      nexbing ⓝ <span id="year"></span>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/company/nexbing" target="_blank">LinkedIn</a>
+      <a href="https://www.facebook.com/nexbing" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/nexbing" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    const toggleDarkMode = () => {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('.boop').style.transform = 'scale(1.1)';
+      setTimeout(() => {
+        document.querySelector('.boop').style.transform = 'scale(1)';
+      }, 300);
+    };
+
+    // Dynamic Year Update
+    const yearElement = document.getElementById('year');
+    yearElement.textContent = new Date().getFullYear();
+
+    // Hamburger Menu Toggle
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    const toggleMenu = () => {
+      hamburger.classList.toggle('active');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    };
+
+    // Close menu when clicking outside
+    window.onclick = (event) => {
+      if (event.target === menu) {
+        toggleMenu();
+      }
+    };
+  </script>
+</body>
+</html>
