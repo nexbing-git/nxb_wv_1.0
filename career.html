@@ -126,56 +126,19 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .open-positions-card span {
       font-size: 18px;
       font-weight: 700;
       color: black;
-      transition: color 0.3s ease;
     }
 
-    .open-positions-card:hover {
-      background: black;
-      transform: translateY(-5px);
+    /* Light Mode Hover Effect */
+    body:not(.dark-mode) .open-positions-card:hover {
+      transform: scale(1.05);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .open-positions-card:hover span {
-      color: white;
-    }
-
-    /* Footer Styles */
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      font-size: 14px;
-      background: white;
-      margin-top: 40px; /* Spacing between main content and footer */
-    }
-
-    .footer-left {
-      text-align: left;
-    }
-
-    .footer-right {
-      display: flex;
-      gap: 15px;
-    }
-
-    .footer-right a {
-      font-size: 16px;
-      font-weight: 600; /* Semi-bold */
-      color: black;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-right a:hover {
-      color: grey; /* Grey on hover */
     }
 
     /* Dark Mode Styles */
@@ -212,21 +175,55 @@
       color: grey;
     }
 
+    body.dark-mode .recruitment-statement {
+      color: white; /* White text in dark mode */
+    }
+
     body.dark-mode .open-positions-card {
-      background: black;
+      background: white; /* White background in dark mode */
       box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     }
 
     body.dark-mode .open-positions-card span {
-      color: white;
+      color: black; /* Black text in dark mode */
     }
 
+    /* Dark Mode Hover Effect */
     body.dark-mode .open-positions-card:hover {
-      background: white;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
     }
 
-    body.dark-mode .open-positions-card:hover span {
+    /* Footer Styles */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      font-size: 14px;
+      background: white;
+      margin-top: 40px; /* Spacing between main content and footer */
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-right a {
+      font-size: 16px;
+      font-weight: 600; /* Semi-bold */
       color: black;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-right a:hover {
+      color: grey; /* Grey on hover */
     }
   </style>
 </head>
